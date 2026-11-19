@@ -1,30 +1,19 @@
 import streamlit as st
 
-
-st.set_page_config(
-    page_title="site | Welcome",
-    page_icon="✨",
-    layout="centered",
+st.title("Registro y autenticación con 2FA")
+st.write(
+    "Aplicación del taller de seguridad: registro de usuarios con datos sensibles "
+    "cifrados, segundo factor de autenticación (OTP) y descarga de usuarios en CSV."
 )
 
-# Main section
-st.title("👋 Welcome to Site")
-st.subheader("We’re glad you’re here at **domain.lat**")
-
-st.write("""
-At **Site**, we believe in innovation, creativity, and connection.
-Explore our world and discover how we can grow your MONEY together.
-""")
-
-if st.button("🚀 Sign Up/Sign In"):
-    st.success("Thanks for visiting! We’re excited to have you here.")
-
-    st.switch_page("all_pages/2_auth_page.py")
-    st.stop()
-
-# Footer
-st.markdown("---")
+st.subheader("Qué puedes hacer")
 st.markdown(
-    "<p style='text-align: center;'>© 2025 Nuu | All rights reserved.</p>",
-    unsafe_allow_html=True,
+    """
+- **Registrarte:** la contraseña se guarda con hash y los datos sensibles, cifrados.
+- **Activar el 2FA:** escanea un QR con una app de autenticación.
+- **Iniciar sesión:** con usuario, contraseña y código OTP.
+- **Descargar usuarios:** en CSV, con la sesión iniciada.
+"""
 )
+
+st.page_link("all_pages/2_auth_page.py", label="Ir a registro e inicio de sesión")
